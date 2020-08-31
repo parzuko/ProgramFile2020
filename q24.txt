@@ -1,0 +1,55 @@
+Database Management
+24. Create a Student table and insert 10 records into it. Implement the following SQL
+commands on the student table:
+ALTER table to add new attributes / modify data type / drop
+attribute
+UPDATE table to modify data
+ORDER By to display data in ascending / descending order
+DELETE to remove tuple(s)
+GROUP BY and find the min, max, sum, count and average
+
+
+BEGIN TRANSACTION;
+
+/* Create a table called NAMES */
+CREATE TABLE STUDENTS(Id integer PRIMARY KEY, Name varchar(10), Marks integer);
+
+/* Create few records in this table */
+INSERT INTO STUDENTS VALUES(1,'Hari',81);
+INSERT INTO STUDENTS VALUES(2,'Shlok',83);
+INSERT INTO STUDENTS VALUES(3,'Kavya',86);
+INSERT INTO STUDENTS VALUES(4,'Bhavya',85);
+INSERT INTO STUDENTS VALUES(5,'Varun',74);
+COMMIT;
+
+/* Display all the records from the table */
+SELECT * FROM STUDENTS;
+
+/* Altering the table*/
+
+ALTER TABLE STUDENTS
+ADD Age integer;
+
+ALTER TABLE STUDENTS
+ALTER COLUMN Age year;
+
+ALTER TABLE STUDENTS
+DROP COLUMN Age;
+
+/* Updating the table*/
+UPDATE Students
+SET Name = 'Jivansh'
+WHERE CustomerID = 1;
+
+/*order by*/
+SELECT * FROM Students
+ORDER BY Name DESC;
+
+/*Deletion*/
+DELETE FROM Students WHERE Name='Jivansh';
+
+/*Group By*/
+SELECT COUNT(Marks), Name
+FROM Students
+GROUP BY Marks;
+
